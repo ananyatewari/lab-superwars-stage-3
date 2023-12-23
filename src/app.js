@@ -27,7 +27,7 @@ const initPlayers = (players) => {
 
     // Instead of forloop use Map method
     // Code here
-    detailedPlayers = players.map((name, index) => {
+    detailedPlayers = players.map((name, i) => {
         let type
         if (i%2 != 0)
         type = "villain"
