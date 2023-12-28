@@ -23,13 +23,13 @@ const PLAYERS = [
 
 // initialize players with image and strength
 const initPlayers = (players) => {
-    let detailedPlayers = '';
+    let detailedPlayers = []
 
     // Instead of forloop use Map method
     // Code here
-    detailedPlayers = players.map((name, i) => {
+    detailedPlayers = players.map((name, index) => {
         let type
-        if (i%2 != 0)
+        if (index%2 != 0)
         type = "villain"
         else
         type = "hero"
@@ -37,11 +37,11 @@ const initPlayers = (players) => {
         return{
             name: name,
             strength: getRandomStrength(),
-            image: `images/super-${i+1}.png`,
+            image: `images/super-${index+1}.png`,
             type: type,
         }
     })
-    console.log("hello from init")
+    // console.log("hello from init")
     return detailedPlayers;
 }
 
@@ -52,7 +52,7 @@ const getRandomStrength = () => {
 
 // Build player template
 const buildPlayers = (players, type) => {
-    let fragment = ``
+    let fragment = ""
 
     // Instead of using for loop
     // Use chaining of Array methods - filter, map and join
@@ -62,14 +62,14 @@ const buildPlayers = (players, type) => {
         
     let data = heroandvillains.map((player) => {
         return `<div class="player">
-        <img src="${player.image}">
+        <img src="${player.image}" alt="">
         <div class="name">${player.name}</div>
         <div class="strength">${player.strength}</div>
         </div>`
     })
     fragment = data.join("")
     console.log(fragment)
-    console.log("hello from build")
+    // console.log("hello from build")
     return fragment
 }
 
@@ -77,7 +77,7 @@ const buildPlayers = (players, type) => {
 const viewPlayers = (players) => {
     document.getElementById('heroes').innerHTML = buildPlayers(players, "hero");
     document.getElementById('villains').innerHTML = buildPlayers(players, "villain")
-    console.log("hello from view")
+    // console.log("hello from view")
 }
 
 
