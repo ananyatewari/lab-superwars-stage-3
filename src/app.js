@@ -57,9 +57,8 @@ const buildPlayers = (players, type) => {
     // Instead of using for loop
     // Use chaining of Array methods - filter, map and join
     // Type your code here
-    let heroandvillains = players.filter ((card) => {
-        card.type == type
-    })
+    let heroandvillains = players.filter((card) => 
+        {card.type == type})
         
     let data = heroandvillains.map((player) => {
         return `<div class="player">
@@ -68,14 +67,13 @@ const buildPlayers = (players, type) => {
         <div class="strength">${player.strength}</div>
         </div>`
     })
-    fragment = data.join("")
-    return fragment;
+    return fragment = data.join("");
 }
 
 // Display players in HTML
 const viewPlayers = (players) => {
-    document.getElementById('heroes').innerHTML = buildPlayers(players, 'hero');
-    document.getElementById('villains').innerHTML = buildPlayers(players, 'villain');
+    document.getElementById('heroes').innerHTML = buildPlayers(players, "hero");
+    document.getElementById('villains').innerHTML = buildPlayers(players, "villain");
 }
 
 
