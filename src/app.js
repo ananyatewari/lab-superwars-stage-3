@@ -60,6 +60,7 @@ const buildPlayers = (players, type) => {
     let heroandvillains = players.filter ((card) => {
         card.type == type
 
+    })
         let data = heroandvillains.map((player) => {
             return `<div class="player">
             <img src="${player[i].image}">
@@ -67,7 +68,6 @@ const buildPlayers = (players, type) => {
             <div class="strength">${player[i].strength}</div>
          </div>`
         })
-    })
     fragment = data.join("")
     return fragment;
 }
