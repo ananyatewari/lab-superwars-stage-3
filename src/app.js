@@ -41,7 +41,6 @@ const initPlayers = (players) => {
             type: type,
         }
     })
-
     return detailedPlayers;
 }
 
@@ -67,7 +66,8 @@ const buildPlayers = (players, type) => {
         <div class="strength">${player.strength}</div>
         </div>`
     })
-    return fragment = data.join("");
+    fragment = data.join("")
+    return fragment
 }
 
 // Display players in HTML
