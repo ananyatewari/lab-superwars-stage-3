@@ -52,26 +52,22 @@ const getRandomStrength = () => {
 
 // Build player template
 const buildPlayers = (players, type) => {
-    let fragment = `<div class="player">
-            <img src="${player[i].image}">
-            <div class="name">${player[i].name}</div>
-            <div class="strength">${player[i].strength}</div>
-         </div>`;
+    let fragment = ``;
 
     // Instead of using for loop
     // Use chaining of Array methods - filter, map and join
     // Type your code here
     let heroandvillains = players.filter ((card) => {
         card.type == type
-
     })
-        let data = heroandvillains.map((player) => {
-            return `<div class="player">
-            <img src="${player[i].image}">
-            <div class="name">${player[i].name}</div>
-            <div class="strength">${player[i].strength}</div>
-         </div>`
-        })
+        
+    let data = heroandvillains.map((player) => {
+        return `<div class="player">
+        <img src="${player.image}">
+        <div class="name">${player.name}</div>
+        <div class="strength">${player.strength}</div>
+        </div>`
+    })
     fragment = data.join("")
     return fragment;
 }
