@@ -41,6 +41,7 @@ const initPlayers = (players) => {
             type: type,
         }
     })
+    console.log("hello from init")
     return detailedPlayers;
 }
 
@@ -68,6 +69,7 @@ const buildPlayers = (players, type) => {
     })
     fragment = data.join("")
     console.log(fragment)
+    console.log("hello from build")
     return fragment
 }
 
@@ -75,6 +77,7 @@ const buildPlayers = (players, type) => {
 const viewPlayers = (players) => {
     document.getElementById('heroes').innerHTML = buildPlayers(players, "hero");
     document.getElementById('villains').innerHTML = buildPlayers(players, "villain")
+    console.log("hello from view")
 }
 
 
